@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(viewBinding.root)
 
 
-
         val intent = Intent(this, MainActivity2::class.java)
 
         startActivityForResult(intent, 123)
