@@ -3,6 +3,7 @@ package com.example.professorapp
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.professorapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,14 +15,9 @@ class MainActivity : AppCompatActivity() {
         viewBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
-
-        val intent = Intent(this, MainActivity2::class.java)
-
-        startActivityForResult(intent, 123)
-
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+        viewBinding.lvLinearLayoutProfessor.setOnClickListener {
+            val intent = Intent(this, MainActivity2::class.java)
+            startActivity(intent)
+        }
     }
 }
